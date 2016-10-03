@@ -22,6 +22,11 @@ class RestaurantCollectionViewController: UIViewController, UICollectionViewDele
             self.collectionView.dataSource = self
         }
     }
+    
+    let cellImageIdentifier = "imageCell"
+    let cellMainIdentifier = "mainCell"
+    let cellAvgPriceIdentifier = "avgCell"
+    let cellMapIdentifier = "mapCell"
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -35,10 +40,10 @@ class RestaurantCollectionViewController: UIViewController, UICollectionViewDele
             make.edges.equalToSuperview()
         }
         
-        self.collectionView.register(ImagesCollectionViewCell.self, forCellWithReuseIdentifier: "imageCell")
-        self.collectionView.register(MainInfoCollectionViewCell.self, forCellWithReuseIdentifier: "mainCell")
-        self.collectionView.register(AvgPriceCollectionViewCell.self, forCellWithReuseIdentifier: "avgCell")
-        self.collectionView.register(MapCollectionViewCell.self, forCellWithReuseIdentifier: "mapCell")
+        self.collectionView.register(ImagesCollectionViewCell.self, forCellWithReuseIdentifier: cellImageIdentifier)
+        self.collectionView.register(MainInfoCollectionViewCell.self, forCellWithReuseIdentifier: cellMainIdentifier)
+        self.collectionView.register(AvgPriceCollectionViewCell.self, forCellWithReuseIdentifier: cellAvgPriceIdentifier)
+        self.collectionView.register(MapCollectionViewCell.self, forCellWithReuseIdentifier: cellMapIdentifier)
         
         self.navigationController?.navigationBar.barTintColor = UIColor.TFMainGreen()
         self.navigationController?.navigationBar.titleTextAttributes = [NSForegroundColorAttributeName:UIColor.white]
@@ -83,7 +88,7 @@ class RestaurantCollectionViewController: UIViewController, UICollectionViewDele
         
         switch indexPath.section {
         case 0:
-            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "imageCell", for: indexPath) as! ImagesCollectionViewCell
+            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: cellImageIdentifier, for: indexPath) as! ImagesCollectionViewCell
             
             if let urlImage = viewModel.resto.pics_main {
                 if let imgURL = URL(string: urlImage) {
@@ -102,7 +107,7 @@ class RestaurantCollectionViewController: UIViewController, UICollectionViewDele
             
             return cell
         case 1:
-            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "mainCell", for: indexPath) as! MainInfoCollectionViewCell
+            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: cellMainIdentifier, for: indexPath) as! MainInfoCollectionViewCell
             cell.titleLabel.text = viewModel.resto.name
             cell.addressLabel.text = viewModel.addressLabelText()
             cell.rateString = viewModel.ratingLabelText()
@@ -111,13 +116,12 @@ class RestaurantCollectionViewController: UIViewController, UICollectionViewDele
             return cell
             
         case 2:
-            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "avgCell", for: indexPath) as! AvgPriceCollectionViewCell
+            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: cellAvgPriceIdentifier, for: indexPath) as! AvgPriceCollectionViewCell
             cell.priceString = viewModel.avgPriceLabelText()
             return cell
             
         case 3:
-            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "mapCell", for: indexPath) as! MapCollectionViewCell
-            
+            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: cellMapIdentifier, for: indexPath) as! MapCollectionViewCell
             
             let longitude = viewModel.resto.gps_long
             let latitude = viewModel.resto.gps_lat
@@ -127,6 +131,7 @@ class RestaurantCollectionViewController: UIViewController, UICollectionViewDele
             if longitude != nil && latitude != nil {
                 coordinates = CLLocationCoordinate2D(latitude: latitude!, longitude: longitude!)
             }
+            
             cell.coordinates = coordinates
             return cell
             
