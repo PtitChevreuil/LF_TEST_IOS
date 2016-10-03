@@ -33,4 +33,10 @@ class TheForkTestTests: XCTestCase {
         }
     }
     
+    func testInfoRestaurantUrl () {
+        let url = TheForkApi.infoRestaurantUrl(forRestaurantId: 6861)
+        let validURl = URL(string: "https://api.lafourchette.com/api?key=IPHONEPRODEDCRFV&method=restaurant_get_info&id_restaurant=6861")
+        
+        XCTAssertTrue(url == validURl)
+    }
 }
