@@ -21,9 +21,10 @@ class AvgPriceCollectionViewCell: UICollectionViewCell {
         priceLabel.font = UIFont (name: "HelveticaNeue", size: 12)
         
         contentView.addSubview(priceLabel)
-
         
         contentView.backgroundColor = UIColor.TFGrayBg()
+        
+        setUpContraints()
     }
     
     override func layoutSubviews() {
@@ -33,15 +34,11 @@ class AvgPriceCollectionViewCell: UICollectionViewCell {
         applyShadowTrick()
     }
     
-    override func updateConstraints() {
-        
+    private func setUpContraints() {
         priceLabel.snp.makeConstraints { (make) in
             make.centerY.equalTo(contentView.snp.centerY)
             make.centerX.equalTo(contentView.snp.centerX)
         }
-        
-        // according to Apple super should be called at end of method
-        super.updateConstraints()
     }
     
     private func applyShadowTrick() {

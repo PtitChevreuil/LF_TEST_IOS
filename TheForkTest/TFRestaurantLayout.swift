@@ -35,7 +35,6 @@ class TFRestaurantLayout: UICollectionViewFlowLayout {
         return CGSize(width: collectionView.frame.width, height: currY)
     }
     
-    
     override init() {
         super.init()
         setup()

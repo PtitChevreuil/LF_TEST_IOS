@@ -17,10 +17,12 @@ class ImagesCollectionViewCell: UICollectionViewCell {
     override init(frame: CGRect) {
         super.init(frame: frame)
         
+        contentView.backgroundColor = UIColor.black
+        
         imageView = UIImageView()
+        imageView.backgroundColor = UIColor.clear
         imageView.contentMode = .scaleAspectFill
         contentView.clipsToBounds = true
-        imageView.image = UIImage(named: "default")
         
         self.contentView.addSubview(imageView)
     }

@@ -31,23 +31,21 @@ class MainInfoCollectionViewCell: UICollectionViewCell {
         addressLabel.font = UIFont (name: "HelveticaNeue", size: 15)
         addressLabel.textColor = UIColor.TFGrayText()
         
-        self.contentView.addSubview(addressLabel)
+        contentView.addSubview(addressLabel)
         
         ratingAvgLabel = UILabel()
         ratingAvgLabel.font = UIFont(name: "HelveticaNeue-Medium", size: 25)
         ratingAvgLabel.textColor = UIColor.black
         
-        self.contentView.addSubview(ratingAvgLabel)
+        contentView.addSubview(ratingAvgLabel)
         
         
         feedbackLabel = UILabel()
         feedbackLabel.font = UIFont(name: "HelveticaNeue-Thin", size: 12)
         feedbackLabel.textColor = UIColor.TFGrayText()
         
-        self.contentView.addSubview(feedbackLabel)
-        
-        self.contentView.backgroundColor = UIColor.white
-        
+        contentView.addSubview(feedbackLabel)
+        contentView.backgroundColor = UIColor.white
     }
     
     private func applyStyleToString() {
@@ -79,61 +77,66 @@ class MainInfoCollectionViewCell: UICollectionViewCell {
         applyStyleToString()
     }
     
-    override func updateConstraints() {
-        
+    private func setUpConstraints() {
         if (contentView.traitCollection.horizontalSizeClass == UIUserInterfaceSizeClass.compact) {
             
-            titleLabel.snp.updateConstraints { (make) in
+            titleLabel.snp.makeConstraints { (make) in
                 make.top.equalTo(self.contentView).offset(8)
                 make.left.equalTo(self.contentView).offset(20)
                 make.right.equalTo(self.contentView).offset(20)
             }
             
-            addressLabel.snp.updateConstraints { (make) in
+            addressLabel.snp.makeConstraints { (make) in
                 make.leading.equalTo(titleLabel.snp.leading)
                 make.top.equalTo(titleLabel.snp.bottom).offset(5)
                 make.trailing.equalTo(titleLabel.snp.trailing)
             }
             
-            ratingAvgLabel.snp.updateConstraints { (make) in
+            ratingAvgLabel.snp.makeConstraints { (make) in
                 // quick workaround
                 make.centerX.equalTo(contentView.snp.centerX)
                 make.top.equalTo(addressLabel.snp.bottom).offset(5)
             }
             
-            feedbackLabel.snp.updateConstraints { (make) in
+            feedbackLabel.snp.makeConstraints { (make) in
                 make.top.equalTo(ratingAvgLabel.snp.bottomMargin).offset(8)
                 make.centerX.equalTo(contentView.snp.centerX)
             }
         } else {
             
-            titleLabel.snp.updateConstraints { (make) in
+            titleLabel.snp.makeConstraints { (make) in
                 make.top.equalTo(self.contentView).offset(8)
                 make.left.equalTo(self.contentView).offset(20)
             }
             
-            addressLabel.snp.updateConstraints { (make) in
+            addressLabel.snp.makeConstraints { (make) in
                 make.leading.equalTo(titleLabel.snp.leading)
                 make.top.equalTo(titleLabel.snp.bottom).offset(5)
             }
             
-            ratingAvgLabel.snp.updateConstraints { (make) in
+            ratingAvgLabel.snp.makeConstraints { (make) in
                 make.top.equalTo(titleLabel.snp.top)
                 make.trailing.equalTo(contentView.snp.trailing).offset(-20)
                 make.leading.greaterThanOrEqualTo(titleLabel.snp.trailing).offset(20)
             }
             
-            feedbackLabel.snp.updateConstraints { (make) in
+            feedbackLabel.snp.makeConstraints { (make) in
                 make.centerY.equalTo(addressLabel.snp.centerY)
                 make.trailing.equalTo(ratingAvgLabel.snp.trailing)
                 make.leading.greaterThanOrEqualTo(addressLabel.snp.trailing).offset(20)
             }
         }
+    }
+    
+    override func updateConstraints() {
+        
+        setUpConstraints()
         
         super.updateConstraints()
     }
     
     private func applyShadowTrick() {
+        
         layer.shadowColor = UIColor.darkGray.cgColor
         layer.shadowOffset = CGSize(width: 2, height: 2)
         layer.shadowRadius = 2

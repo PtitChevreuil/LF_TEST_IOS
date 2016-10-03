@@ -28,6 +28,8 @@ class MapCollectionViewCell: UICollectionViewCell, MKMapViewDelegate {
         self.contentView.clipsToBounds = true
         
         mapView.delegate = self
+        
+        setUpConstraints()
     }
     
     private func addRestaurantLocation() {
@@ -57,14 +59,10 @@ class MapCollectionViewCell: UICollectionViewCell, MKMapViewDelegate {
         layer.shadowOpacity = 0.7
     }
     
-    override func updateConstraints() {
-        
+    private func setUpConstraints() {
         mapView.snp.makeConstraints { (make) in
             make.edges.equalTo(contentView.snp.edges)
         }
-        
-        // according to Apple super should be called at end of method
-        super.updateConstraints()
     }
     
     required init?(coder aDecoder: NSCoder) {

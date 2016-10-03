@@ -11,8 +11,6 @@ import CoreData
 
 class RestaurantStore {
     
-    //let coreDataStack = CoreDataStack(modelName: "Restaurant")
-    
     let session: URLSession = {
         let config = URLSessionConfiguration.default
         return URLSession(configuration: config)
@@ -41,6 +39,4 @@ class RestaurantStore {
         }
         task.resume()
     }
-
-
 }

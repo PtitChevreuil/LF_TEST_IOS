@@ -35,17 +35,22 @@ class ViewController: UIViewController {
         
         view.addSubview(iconView)
         
-        iconView.snp.makeConstraints { (make) in
-            make.width.height.equalTo(150)
-            make.centerX.equalTo(self.view.snp.centerX)
-            self.constraint = make.centerY.equalTo(self.view.snp.centerY).constraint
-        }
-        
         activityIndicator = UIActivityIndicatorView()
         activityIndicator.hidesWhenStopped = true
         activityIndicator.activityIndicatorViewStyle = .whiteLarge
         
         self.view.addSubview(activityIndicator)
+        
+        setUpConstraints()
+    }
+    
+    private func setUpConstraints () {
+        
+        iconView.snp.makeConstraints { (make) in
+            make.width.height.equalTo(150)
+            make.centerX.equalTo(self.view.snp.centerX)
+            self.constraint = make.centerY.equalTo(self.view.snp.centerY).constraint
+        }
         
         activityIndicator.snp.makeConstraints { (make) in
             make.width.height.equalTo(50)
@@ -57,13 +62,12 @@ class ViewController: UIViewController {
         super.viewDidAppear(animated)
         
         self.constraint?.update(offset: -120)
-        
+
         view.setNeedsLayout()
         
         UIView.animate(withDuration: 0.6, delay: 0, options: [], animations: { [unowned weakSelf = self]() -> Void in
             weakSelf.view.layoutIfNeeded()
             weakSelf.activityIndicator.startAnimating()
-            
         })
         
         restaurantStore.fetchRecentRestaurant(withID: idExample) { (result) in
@@ -81,16 +85,14 @@ class ViewController: UIViewController {
                 }
             }
         }
-
     }
     
     private func presentRestaurantView(model: RestaurantModel) {
-        let nc = UINavigationController()
+        
         let vc = RestaurantCollectionViewController()
         vc.viewModel = RestaurantViewModel(withRestaurant: model)
-        nc.setViewControllers([vc], animated: true)
         
-        self.present(nc, animated: true, completion: nil)
+        self.present(vc, animated: false, completion: nil)
     }
     
     private func displayErrorMsg () {
@@ -109,7 +111,5 @@ class ViewController: UIViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-
-
 }
 
