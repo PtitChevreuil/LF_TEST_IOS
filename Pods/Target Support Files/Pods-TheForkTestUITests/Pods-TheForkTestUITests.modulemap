@@ -1,0 +1,6 @@
+framework module Pods_TheForkTestUITests {
+  umbrella header "Pods-TheForkTestUITests-umbrella.h"
+
+  export *
+  module * { export * }
+}
