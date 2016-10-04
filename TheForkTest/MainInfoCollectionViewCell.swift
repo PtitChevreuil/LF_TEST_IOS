@@ -25,7 +25,7 @@ class MainInfoCollectionViewCell: UICollectionViewCell {
     
     override init(frame: CGRect) {
         super.init(frame: frame)
-        
+            
         titleLabel = UILabel()
         titleLabel.font = UIFont (name: "HelveticaNeue", size: 24)
         titleLabel.textColor = UIColor.TFTitle()
@@ -51,6 +51,8 @@ class MainInfoCollectionViewCell: UICollectionViewCell {
         
         contentView.addSubview(feedbackLabel)
         contentView.backgroundColor = UIColor.white
+        
+        self.setNeedsUpdateConstraints()
     }
     
     private func applyStyleToString() {
@@ -77,14 +79,13 @@ class MainInfoCollectionViewCell: UICollectionViewCell {
     override func layoutSubviews() {
         super.layoutSubviews()
         
-        
         applyShadowTrick()
         applyStyleToString()
+        self.setNeedsUpdateConstraints()
     }
     
     private func setUpConstraints() {
         if (contentView.traitCollection.horizontalSizeClass == UIUserInterfaceSizeClass.compact) {
-            
             titleLabel.snp.makeConstraints { (make) in
                 make.top.equalTo(self.contentView).offset(8)
                 make.left.equalTo(self.contentView).offset(20)
@@ -108,7 +109,6 @@ class MainInfoCollectionViewCell: UICollectionViewCell {
                 make.centerX.equalTo(contentView.snp.centerX)
             }
         } else {
-            
             titleLabel.snp.makeConstraints { (make) in
                 make.top.equalTo(self.contentView).offset(8)
                 make.left.equalTo(self.contentView).offset(20)
@@ -134,13 +134,24 @@ class MainInfoCollectionViewCell: UICollectionViewCell {
     }
     
     override func updateConstraints() {
-        
+
         if needsSetup {
             setUpConstraints()
             needsSetup = false
+        } else {
+            deleteAllConstraints()
+            setUpConstraints()
         }
         
         super.updateConstraints()
+    }
+    
+    private func deleteAllConstraints() {
+        
+        titleLabel.snp.removeConstraints()
+        addressLabel.snp.removeConstraints()
+        feedbackLabel.snp.removeConstraints()
+        ratingAvgLabel.snp.removeConstraints()
     }
     
     private func applyShadowTrick() {

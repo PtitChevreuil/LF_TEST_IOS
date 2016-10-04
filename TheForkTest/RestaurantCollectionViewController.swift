@@ -201,4 +201,5 @@ class RestaurantCollectionViewController: UIViewController, UICollectionViewDele
     override func viewDidDisappear(_ animated: Bool) {
         userActivity?.invalidate()
     }
+    
 }

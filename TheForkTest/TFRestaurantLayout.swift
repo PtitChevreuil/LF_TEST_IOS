@@ -62,12 +62,21 @@ class TFRestaurantLayout: UICollectionViewFlowLayout {
     
     private func setUpImageHeight() {
         
-        if (UIDevice.current.userInterfaceIdiom == UIUserInterfaceIdiom.pad && collectionView?.traitCollection.horizontalSizeClass == UIUserInterfaceSizeClass.regular) {
+        if (UIDevice.current.userInterfaceIdiom == UIUserInterfaceIdiom.pad) {
             imageHeight = 300
-            mainHeight = 80
+            if (collectionView?.traitCollection.horizontalSizeClass == UIUserInterfaceSizeClass.regular) {
+                mainHeight = 80
+            } else {
+                mainHeight = 120
+            }
         } else {
-            imageHeight = 200
-            mainHeight = 120
+            if(UIDevice.current.userInterfaceIdiom == UIUserInterfaceIdiom.phone && collectionView?.traitCollection.horizontalSizeClass == UIUserInterfaceSizeClass.regular) {
+                imageHeight = 200
+                mainHeight = 80
+            } else {
+                imageHeight = 200
+                mainHeight = 120
+            }
         }
     }
     
@@ -157,5 +166,4 @@ class TFRestaurantLayout: UICollectionViewFlowLayout {
         
         return !__CGSizeEqualToSize(newBounds.size, self.collectionView!.frame.size)
     }
-
 }

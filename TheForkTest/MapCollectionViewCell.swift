@@ -30,6 +30,7 @@ class MapCollectionViewCell: UICollectionViewCell {
         contentView.addSubview(mapView)
         
         self.contentView.clipsToBounds = true
+        
     }
     
     override func updateConstraints() {
@@ -60,5 +61,10 @@ class MapCollectionViewCell: UICollectionViewCell {
     required init?(coder aDecoder: NSCoder) {
         // will never be called
         fatalError("init(coder:) has not been implemented")
+    }
+    
+    override func willTransition(from oldLayout: UICollectionViewLayout, to newLayout: UICollectionViewLayout) {
+        print("Got called")
+        self.setNeedsUpdateConstraints()
     }
 }
