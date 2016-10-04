@@ -62,9 +62,4 @@ class MapCollectionViewCell: UICollectionViewCell {
         // will never be called
         fatalError("init(coder:) has not been implemented")
     }
-    
-    override func willTransition(from oldLayout: UICollectionViewLayout, to newLayout: UICollectionViewLayout) {
-        print("Got called")
-        self.setNeedsUpdateConstraints()
-    }
 }
