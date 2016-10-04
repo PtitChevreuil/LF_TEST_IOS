@@ -9,11 +9,9 @@
 import UIKit
 import MapKit
 
-class MapCollectionViewCell: UICollectionViewCell, MKMapViewDelegate {
+class MapCollectionViewCell: UICollectionViewCell {
     
     var mapView: MKMapView!
-    
-    var coordinates: CLLocationCoordinate2D?
     
     private(set) var needsSetup = true
     
@@ -32,8 +30,6 @@ class MapCollectionViewCell: UICollectionViewCell, MKMapViewDelegate {
         contentView.addSubview(mapView)
         
         self.contentView.clipsToBounds = true
-        
-        mapView.delegate = self
     }
     
     override func updateConstraints() {
@@ -46,26 +42,8 @@ class MapCollectionViewCell: UICollectionViewCell, MKMapViewDelegate {
         super.updateConstraints()
     }
     
-    private func addRestaurantLocation() {
-        
-        if coordinates != nil {
-            let theSpan:MKCoordinateSpan = MKCoordinateSpanMake(0.005 , 0.005)
-            let location:CLLocationCoordinate2D = coordinates!
-            let theRegion:MKCoordinateRegion = MKCoordinateRegionMake(location, theSpan)
-            
-            mapView.setRegion(theRegion, animated: true)
-            
-            let anotation = MKPointAnnotation()
-            anotation.coordinate = location
-            
-            mapView.addAnnotation(anotation)
-        }
-    }
-    
     override func layoutSubviews() {
         super.layoutSubviews()
-        
-        self.addRestaurantLocation()
         
         layer.shadowColor = UIColor.darkGray.cgColor
         layer.shadowOffset = CGSize(width: 2, height: 2)

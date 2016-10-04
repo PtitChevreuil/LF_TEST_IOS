@@ -132,7 +132,17 @@ class RestaurantCollectionViewController: UIViewController, UICollectionViewDele
                 coordinates = CLLocationCoordinate2D(latitude: latitude!, longitude: longitude!)
             }
             
-            cell.coordinates = coordinates
+            let theSpan:MKCoordinateSpan = MKCoordinateSpanMake(0.005 , 0.005)
+            let location:CLLocationCoordinate2D = coordinates!
+            let theRegion:MKCoordinateRegion = MKCoordinateRegionMake(location, theSpan)
+            
+            cell.mapView.setRegion(theRegion, animated: true)
+            
+            let anotation = MKPointAnnotation()
+            anotation.coordinate = location
+            
+            cell.mapView.addAnnotation(anotation)
+
             return cell
             
         default: return UICollectionViewCell()
