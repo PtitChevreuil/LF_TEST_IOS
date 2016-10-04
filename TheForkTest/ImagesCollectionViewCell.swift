@@ -14,6 +14,12 @@ class ImagesCollectionViewCell: UICollectionViewCell {
     // to the existing design
     var imageView : UIImageView!
     
+    private(set) var needsSetup = true
+    
+    override class var requiresConstraintBasedLayout: Bool {
+        return true
+    }
+    
     override init(frame: CGRect) {
         super.init(frame: frame)
         
@@ -27,12 +33,20 @@ class ImagesCollectionViewCell: UICollectionViewCell {
         self.contentView.addSubview(imageView)
     }
     
-    override func layoutSubviews() {
-        super.layoutSubviews()
-        
+    private func setUpConstraints() {
         imageView.snp.makeConstraints { (make) in
             make.edges.equalToSuperview()
         }
+    }
+    
+    override func updateConstraints() {
+        
+        if needsSetup {
+            setUpConstraints()
+            needsSetup = false
+        }
+        
+        super.updateConstraints()
     }
     
     required init?(coder aDecoder: NSCoder) {

@@ -15,6 +15,12 @@ class MapCollectionViewCell: UICollectionViewCell, MKMapViewDelegate {
     
     var coordinates: CLLocationCoordinate2D?
     
+    private(set) var needsSetup = true
+    
+    override class var requiresConstraintBasedLayout: Bool {
+        return true
+    }
+    
     override init(frame: CGRect) {
         super.init(frame: frame)
         
@@ -28,8 +34,16 @@ class MapCollectionViewCell: UICollectionViewCell, MKMapViewDelegate {
         self.contentView.clipsToBounds = true
         
         mapView.delegate = self
+    }
+    
+    override func updateConstraints() {
         
-        setUpConstraints()
+        if needsSetup {
+            setUpConstraints()
+            needsSetup = false
+        }
+        
+        super.updateConstraints()
     }
     
     private func addRestaurantLocation() {

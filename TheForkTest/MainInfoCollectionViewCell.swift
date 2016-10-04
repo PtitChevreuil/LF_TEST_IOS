@@ -17,6 +17,11 @@ class MainInfoCollectionViewCell: UICollectionViewCell {
     
     var rateString: String!
     
+    private(set) var needsSetup = true
+    
+    override class var requiresConstraintBasedLayout: Bool {
+        return true
+    }
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -130,7 +135,10 @@ class MainInfoCollectionViewCell: UICollectionViewCell {
     
     override func updateConstraints() {
         
-        setUpConstraints()
+        if needsSetup {
+            setUpConstraints()
+            needsSetup = false
+        }
         
         super.updateConstraints()
     }

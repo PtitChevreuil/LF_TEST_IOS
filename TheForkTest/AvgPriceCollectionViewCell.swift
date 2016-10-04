@@ -13,6 +13,12 @@ class AvgPriceCollectionViewCell: UICollectionViewCell {
     var priceLabel: UILabel!
     var priceString: String!
     
+    private(set) var needsSetup = true
+    
+    override class var requiresConstraintBasedLayout: Bool {
+        return true
+    }
+    
     override init(frame: CGRect) {
         super.init(frame: frame)
         
@@ -24,7 +30,6 @@ class AvgPriceCollectionViewCell: UICollectionViewCell {
         
         contentView.backgroundColor = UIColor.TFGrayBg()
         
-        setUpContraints()
     }
     
     override func layoutSubviews() {
@@ -32,6 +37,16 @@ class AvgPriceCollectionViewCell: UICollectionViewCell {
         
         applyStyleToString()
         applyShadowTrick()
+    }
+    
+    override func updateConstraints() {
+        
+        if needsSetup {
+            self.setUpContraints()
+            needsSetup = false
+        }
+        
+        super.updateConstraints()
     }
     
     private func setUpContraints() {
