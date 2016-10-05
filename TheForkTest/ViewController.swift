@@ -61,7 +61,7 @@ class ViewController: UIViewController {
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         
-        self.constraint?.update(offset: -120)
+        self.constraint?.update(offset: -150)
 
         view.setNeedsLayout()
         
@@ -70,18 +70,18 @@ class ViewController: UIViewController {
             weakSelf.activityIndicator.startAnimating()
         })
         
-        restaurantStore.fetchRecentRestaurant(withID: idExample) { (result) in
+        restaurantStore.fetchRecentRestaurant(withID: idExample) { [weak weakSelf = self](result) in
             switch(result) {
             case let .Success(resto) :
                 OperationQueue.main.addOperation {
-                    //activityIndicator.stopAnimating()
-                    self.presentRestaurantView(model: resto)
+                    weakSelf?.activityIndicator.stopAnimating()
+                    weakSelf?.presentRestaurantView(model: resto)
                 }
             case .Failure(_) :
                 print("Error  ...")
                 OperationQueue.main.addOperation {
-                    //activityIndicator.stopAnimating()
-                    self.displayErrorMsg()
+                    weakSelf?.activityIndicator.stopAnimating()
+                    weakSelf?.displayErrorMsg()
                 }
             }
         }
