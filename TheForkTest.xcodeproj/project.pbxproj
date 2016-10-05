@@ -23,6 +23,14 @@
 		DE6EDDF21DA03BF2006B3DEA /* Restaurant+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE6EDDF01DA03BF2006B3DEA /* Restaurant+CoreDataClass.swift */; };
 		DE6EDDF31DA03BF2006B3DEA /* Restaurant+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE6EDDF11DA03BF2006B3DEA /* Restaurant+CoreDataProperties.swift */; };
 		DE6EDDF51DA03D78006B3DEA /* RestaurantStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE6EDDF41DA03D78006B3DEA /* RestaurantStore.swift */; };
+		DEAB78481DA4FC0E00A75F1A /* Interface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DEAB78461DA4FC0E00A75F1A /* Interface.storyboard */; };
+		DEAB784A1DA4FC0E00A75F1A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DEAB78491DA4FC0E00A75F1A /* Assets.xcassets */; };
+		DEAB78511DA4FC0E00A75F1A /* TheForkTestWatch Extension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = DEAB78501DA4FC0E00A75F1A /* TheForkTestWatch Extension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		DEAB78561DA4FC0E00A75F1A /* InterfaceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEAB78551DA4FC0E00A75F1A /* InterfaceController.swift */; };
+		DEAB78581DA4FC0E00A75F1A /* ExtensionDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEAB78571DA4FC0E00A75F1A /* ExtensionDelegate.swift */; };
+		DEAB785A1DA4FC0E00A75F1A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DEAB78591DA4FC0E00A75F1A /* Assets.xcassets */; };
+		DEAB785E1DA4FC0F00A75F1A /* TheForkTestWatch.app in Embed Watch Content */ = {isa = PBXBuildFile; fileRef = DEAB78441DA4FC0E00A75F1A /* TheForkTestWatch.app */; };
+		DEAB78681DA51BB000A75F1A /* RestaurantInterfaceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEAB78671DA51BB000A75F1A /* RestaurantInterfaceController.swift */; };
 		DEEFDDF21DA0F60000111A84 /* RestaurantModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEEFDDF11DA0F60000111A84 /* RestaurantModel.swift */; };
 		DEEFDDF51DA104CF00111A84 /* MapCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEEFDDF41DA104CF00111A84 /* MapCollectionViewCell.swift */; };
 		DEEFDDF71DA1053800111A84 /* AvgPriceCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEEFDDF61DA1053800111A84 /* AvgPriceCollectionViewCell.swift */; };
@@ -48,7 +56,46 @@
 			remoteGlobalIDString = DE6EDD6D1DA01E47006B3DEA;
 			remoteInfo = TheForkTest;
 		};
+		DEAB78521DA4FC0E00A75F1A /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = DE6EDD661DA01E47006B3DEA /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = DEAB784F1DA4FC0E00A75F1A;
+			remoteInfo = "TheForkTestWatch Extension";
+		};
+		DEAB785C1DA4FC0F00A75F1A /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = DE6EDD661DA01E47006B3DEA /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = DEAB78431DA4FC0E00A75F1A;
+			remoteInfo = TheForkTestWatch;
+		};
 /* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		DEAB78621DA4FC0F00A75F1A /* Embed App Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				DEAB78511DA4FC0E00A75F1A /* TheForkTestWatch Extension.appex in Embed App Extensions */,
+			);
+			name = "Embed App Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DEAB78661DA4FC0F00A75F1A /* Embed Watch Content */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "$(CONTENTS_FOLDER_PATH)/Watch";
+			dstSubfolderSpec = 16;
+			files = (
+				DEAB785E1DA4FC0F00A75F1A /* TheForkTestWatch.app in Embed Watch Content */,
+			);
+			name = "Embed Watch Content";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		0D96C2E3F6313FD6A7396980 /* Pods-TheForkTest.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TheForkTest.debug.xcconfig"; path = "Pods/Target Support Files/Pods-TheForkTest/Pods-TheForkTest.debug.xcconfig"; sourceTree = "<group>"; };
@@ -78,6 +125,16 @@
 		DE6EDDF01DA03BF2006B3DEA /* Restaurant+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Restaurant+CoreDataClass.swift"; sourceTree = "<group>"; };
 		DE6EDDF11DA03BF2006B3DEA /* Restaurant+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Restaurant+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		DE6EDDF41DA03D78006B3DEA /* RestaurantStore.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RestaurantStore.swift; sourceTree = "<group>"; };
+		DEAB78441DA4FC0E00A75F1A /* TheForkTestWatch.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TheForkTestWatch.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		DEAB78471DA4FC0E00A75F1A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Interface.storyboard; sourceTree = "<group>"; };
+		DEAB78491DA4FC0E00A75F1A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		DEAB784B1DA4FC0E00A75F1A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		DEAB78501DA4FC0E00A75F1A /* TheForkTestWatch Extension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "TheForkTestWatch Extension.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
+		DEAB78551DA4FC0E00A75F1A /* InterfaceController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InterfaceController.swift; sourceTree = "<group>"; };
+		DEAB78571DA4FC0E00A75F1A /* ExtensionDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtensionDelegate.swift; sourceTree = "<group>"; };
+		DEAB78591DA4FC0E00A75F1A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		DEAB785B1DA4FC0E00A75F1A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		DEAB78671DA51BB000A75F1A /* RestaurantInterfaceController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RestaurantInterfaceController.swift; sourceTree = "<group>"; };
 		DEEFDDF11DA0F60000111A84 /* RestaurantModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RestaurantModel.swift; sourceTree = "<group>"; };
 		DEEFDDF41DA104CF00111A84 /* MapCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapCollectionViewCell.swift; sourceTree = "<group>"; };
 		DEEFDDF61DA1053800111A84 /* AvgPriceCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AvgPriceCollectionViewCell.swift; sourceTree = "<group>"; };
@@ -114,6 +171,13 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		DEAB784D1DA4FC0E00A75F1A /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -146,6 +210,8 @@
 				DE6EDD701DA01E47006B3DEA /* TheForkTest */,
 				DE6EDD881DA01E47006B3DEA /* TheForkTestTests */,
 				DE6EDD931DA01E47006B3DEA /* TheForkTestUITests */,
+				DEAB78451DA4FC0E00A75F1A /* TheForkTestWatch */,
+				DEAB78541DA4FC0E00A75F1A /* TheForkTestWatch Extension */,
 				DE6EDD6F1DA01E47006B3DEA /* Products */,
 				D8F49275DC55F437BD705FA0 /* Pods */,
 				81C8CD1FF79A7D04286DE813 /* Frameworks */,
@@ -158,6 +224,8 @@
 				DE6EDD6E1DA01E47006B3DEA /* TheForkTest.app */,
 				DE6EDD851DA01E47006B3DEA /* TheForkTestTests.xctest */,
 				DE6EDD901DA01E47006B3DEA /* TheForkTestUITests.xctest */,
+				DEAB78441DA4FC0E00A75F1A /* TheForkTestWatch.app */,
+				DEAB78501DA4FC0E00A75F1A /* TheForkTestWatch Extension.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -234,6 +302,28 @@
 			name = "Core Data";
 			sourceTree = "<group>";
 		};
+		DEAB78451DA4FC0E00A75F1A /* TheForkTestWatch */ = {
+			isa = PBXGroup;
+			children = (
+				DEAB78461DA4FC0E00A75F1A /* Interface.storyboard */,
+				DEAB78491DA4FC0E00A75F1A /* Assets.xcassets */,
+				DEAB784B1DA4FC0E00A75F1A /* Info.plist */,
+			);
+			path = TheForkTestWatch;
+			sourceTree = "<group>";
+		};
+		DEAB78541DA4FC0E00A75F1A /* TheForkTestWatch Extension */ = {
+			isa = PBXGroup;
+			children = (
+				DEAB78551DA4FC0E00A75F1A /* InterfaceController.swift */,
+				DEAB78571DA4FC0E00A75F1A /* ExtensionDelegate.swift */,
+				DEAB78591DA4FC0E00A75F1A /* Assets.xcassets */,
+				DEAB785B1DA4FC0E00A75F1A /* Info.plist */,
+				DEAB78671DA51BB000A75F1A /* RestaurantInterfaceController.swift */,
+			);
+			path = "TheForkTestWatch Extension";
+			sourceTree = "<group>";
+		};
 		DEEFDDF31DA1037000111A84 /* View */ = {
 			isa = PBXGroup;
 			children = (
@@ -284,10 +374,12 @@
 				DE6EDD6C1DA01E47006B3DEA /* Resources */,
 				D01923AAD337628F9B80BF5B /* [CP] Embed Pods Frameworks */,
 				303A398426A7E0359D725DE4 /* [CP] Copy Pods Resources */,
+				DEAB78661DA4FC0F00A75F1A /* Embed Watch Content */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				DEAB785D1DA4FC0F00A75F1A /* PBXTargetDependency */,
 			);
 			name = TheForkTest;
 			productName = TheForkTest;
@@ -335,6 +427,40 @@
 			productReference = DE6EDD901DA01E47006B3DEA /* TheForkTestUITests.xctest */;
 			productType = "com.apple.product-type.bundle.ui-testing";
 		};
+		DEAB78431DA4FC0E00A75F1A /* TheForkTestWatch */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = DEAB78631DA4FC0F00A75F1A /* Build configuration list for PBXNativeTarget "TheForkTestWatch" */;
+			buildPhases = (
+				DEAB78421DA4FC0E00A75F1A /* Resources */,
+				DEAB78621DA4FC0F00A75F1A /* Embed App Extensions */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				DEAB78531DA4FC0E00A75F1A /* PBXTargetDependency */,
+			);
+			name = TheForkTestWatch;
+			productName = TheForkTestWatch;
+			productReference = DEAB78441DA4FC0E00A75F1A /* TheForkTestWatch.app */;
+			productType = "com.apple.product-type.application.watchapp2";
+		};
+		DEAB784F1DA4FC0E00A75F1A /* TheForkTestWatch Extension */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = DEAB785F1DA4FC0F00A75F1A /* Build configuration list for PBXNativeTarget "TheForkTestWatch Extension" */;
+			buildPhases = (
+				DEAB784C1DA4FC0E00A75F1A /* Sources */,
+				DEAB784D1DA4FC0E00A75F1A /* Frameworks */,
+				DEAB784E1DA4FC0E00A75F1A /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "TheForkTestWatch Extension";
+			productName = "TheForkTestWatch Extension";
+			productReference = DEAB78501DA4FC0E00A75F1A /* TheForkTestWatch Extension.appex */;
+			productType = "com.apple.product-type.watchkit2-extension";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -363,6 +489,16 @@
 						ProvisioningStyle = Automatic;
 						TestTargetID = DE6EDD6D1DA01E47006B3DEA;
 					};
+					DEAB78431DA4FC0E00A75F1A = {
+						CreatedOnToolsVersion = 8.0;
+						DevelopmentTeam = PP64RT7P8Z;
+						ProvisioningStyle = Automatic;
+					};
+					DEAB784F1DA4FC0E00A75F1A = {
+						CreatedOnToolsVersion = 8.0;
+						DevelopmentTeam = PP64RT7P8Z;
+						ProvisioningStyle = Automatic;
+					};
 				};
 			};
 			buildConfigurationList = DE6EDD691DA01E47006B3DEA /* Build configuration list for PBXProject "TheForkTest" */;
@@ -381,6 +517,8 @@
 				DE6EDD6D1DA01E47006B3DEA /* TheForkTest */,
 				DE6EDD841DA01E47006B3DEA /* TheForkTestTests */,
 				DE6EDD8F1DA01E47006B3DEA /* TheForkTestUITests */,
+				DEAB78431DA4FC0E00A75F1A /* TheForkTestWatch */,
+				DEAB784F1DA4FC0E00A75F1A /* TheForkTestWatch Extension */,
 			);
 		};
 /* End PBXProject section */
@@ -406,6 +544,23 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DEAB78421DA4FC0E00A75F1A /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DEAB784A1DA4FC0E00A75F1A /* Assets.xcassets in Resources */,
+				DEAB78481DA4FC0E00A75F1A /* Interface.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DEAB784E1DA4FC0E00A75F1A /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DEAB785A1DA4FC0E00A75F1A /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -575,6 +730,16 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		DEAB784C1DA4FC0E00A75F1A /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DEAB78581DA4FC0E00A75F1A /* ExtensionDelegate.swift in Sources */,
+				DEAB78681DA51BB000A75F1A /* RestaurantInterfaceController.swift in Sources */,
+				DEAB78561DA4FC0E00A75F1A /* InterfaceController.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
@@ -588,6 +753,16 @@
 			target = DE6EDD6D1DA01E47006B3DEA /* TheForkTest */;
 			targetProxy = DE6EDD911DA01E47006B3DEA /* PBXContainerItemProxy */;
 		};
+		DEAB78531DA4FC0E00A75F1A /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = DEAB784F1DA4FC0E00A75F1A /* TheForkTestWatch Extension */;
+			targetProxy = DEAB78521DA4FC0E00A75F1A /* PBXContainerItemProxy */;
+		};
+		DEAB785D1DA4FC0F00A75F1A /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = DEAB78431DA4FC0E00A75F1A /* TheForkTestWatch */;
+			targetProxy = DEAB785C1DA4FC0F00A75F1A /* PBXContainerItemProxy */;
+		};
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
@@ -597,6 +772,14 @@
 				DE6EDD7E1DA01E47006B3DEA /* Base */,
 			);
 			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+		DEAB78461DA4FC0E00A75F1A /* Interface.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				DEAB78471DA4FC0E00A75F1A /* Base */,
+			);
+			name = Interface.storyboard;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -787,6 +970,76 @@
 			};
 			name = Release;
 		};
+		DEAB78601DA4FC0F00A75F1A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_COMPLICATION_NAME = Complication;
+				DEVELOPMENT_TEAM = PP64RT7P8Z;
+				INFOPLIST_FILE = "TheForkTestWatch Extension/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.ptitchevreuil.TheForkTest.watchkitapp.watchkitextension;
+				PRODUCT_NAME = "${TARGET_NAME}";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 3.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 3.0;
+			};
+			name = Debug;
+		};
+		DEAB78611DA4FC0F00A75F1A /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_COMPLICATION_NAME = Complication;
+				DEVELOPMENT_TEAM = PP64RT7P8Z;
+				INFOPLIST_FILE = "TheForkTestWatch Extension/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.ptitchevreuil.TheForkTest.watchkitapp.watchkitextension;
+				PRODUCT_NAME = "${TARGET_NAME}";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 3.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 3.0;
+			};
+			name = Release;
+		};
+		DEAB78641DA4FC0F00A75F1A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = PP64RT7P8Z;
+				IBSC_MODULE = TheForkTestWatch_Extension;
+				INFOPLIST_FILE = TheForkTestWatch/Info.plist;
+				PRODUCT_BUNDLE_IDENTIFIER = com.ptitchevreuil.TheForkTest.watchkitapp;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 3.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 3.0;
+			};
+			name = Debug;
+		};
+		DEAB78651DA4FC0F00A75F1A /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = PP64RT7P8Z;
+				IBSC_MODULE = TheForkTestWatch_Extension;
+				INFOPLIST_FILE = TheForkTestWatch/Info.plist;
+				PRODUCT_BUNDLE_IDENTIFIER = com.ptitchevreuil.TheForkTest.watchkitapp;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 3.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 3.0;
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -825,6 +1078,22 @@
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
+		};
+		DEAB785F1DA4FC0F00A75F1A /* Build configuration list for PBXNativeTarget "TheForkTestWatch Extension" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				DEAB78601DA4FC0F00A75F1A /* Debug */,
+				DEAB78611DA4FC0F00A75F1A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		DEAB78631DA4FC0F00A75F1A /* Build configuration list for PBXNativeTarget "TheForkTestWatch" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				DEAB78641DA4FC0F00A75F1A /* Debug */,
+				DEAB78651DA4FC0F00A75F1A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
 		};
 /* End XCConfigurationList section */
 
