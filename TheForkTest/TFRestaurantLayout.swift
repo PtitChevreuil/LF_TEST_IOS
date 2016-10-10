@@ -158,9 +158,9 @@ class TFRestaurantLayout: UICollectionViewFlowLayout {
         return layoutAttributes[indexPath]
     }
     
-    override func shouldInvalidateLayout(forPreferredLayoutAttributes preferredAttributes: UICollectionViewLayoutAttributes, withOriginalAttributes originalAttributes: UICollectionViewLayoutAttributes) -> Bool {
-        return true
-    }
+    /*override func shouldInvalidateLayout(forPreferredLayoutAttributes preferredAttributes: UICollectionViewLayoutAttributes, withOriginalAttributes originalAttributes: UICollectionViewLayoutAttributes) -> Bool {
+        return false
+    }*/
     
     override func shouldInvalidateLayout(forBoundsChange newBounds: CGRect) -> Bool {
         
